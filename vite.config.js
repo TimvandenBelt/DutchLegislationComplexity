@@ -18,28 +18,30 @@ export default defineConfig({
                 },
             },
         }),
-        VitePWA({ registerType: "autoUpdate" }),
-        checker({
-            typescript: true,
-            vueTsc: true,
-            eslint: {
-                lintCommand: 'eslint "./resources/**/*.{ts,tsx,vue,js}"',
-            },
-            stylelint: {
-                lintCommand: "stylelint ./resources/**/*.{ts,vue,scss}",
-            },
-        }),
+        // VitePWA({ registerType: "autoUpdate" }),
+        // checker({
+        //     typescript: true,
+        //     vueTsc: true,
+        //     eslint: {
+        //         lintCommand: 'eslint "./resources/**/*.{ts,tsx,vue,js}"',
+        //     },
+        //     stylelint: {
+        //         lintCommand: "stylelint ./resources/**/*.{ts,vue,scss}",
+        //     },
+        // }),
     ],
     server: {
         port: 5173,
         hmr: {
             host: "localhost",
         },
-        // watch: {
-        //     usePolling: true,
-        //     interval: 1000,
-        //     binaryInterval: 1000,
-        //     paths: ["resources/**/*"],
-        // },
+        watch: {
+            usePolling: true,
+            interval: 300,
+            binaryInterval: 1000,
+            paths: ["resources/**/*"],
+            alwaysStat: true,
+            awaitWriteFinish: { stabilityThreshold: 1000, pollInterval: 100 },
+        },
     },
 });

@@ -1,5 +1,6 @@
 import "./bootstrap";
 import "../css/app.scss";
+import "flag-icons";
 
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/inertia-vue3";
@@ -8,6 +9,9 @@ import { InertiaProgress } from "@inertiajs/progress";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { ZiggyVue } from "../../vendor/tightenco/ziggy/dist/vue.m";
 import DefaultLayout from "./Layouts/DefaultLayout.vue";
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const appName =
     window.document.getElementsByTagName("title")[0]?.innerText ||
@@ -36,6 +40,7 @@ createInertiaApp({
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-ignore // Is provided through the blade template or through a request
                 .use(ZiggyVue, Ziggy)
+                .component("font-awesome-icon", FontAwesomeIcon)
                 .mount(el)
         );
     },

@@ -11,3 +11,36 @@ import axios from "axios";
 window.axios = axios;
 
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+
+/* import the fontawesome core */
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+/* import specific icons */
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+    faArrowRightArrowLeft,
+    faChevronDown,
+    faChevronRight,
+    faPlus,
+    faLanguage,
+    faCircleNodes,
+    faSitemap,
+    faPercent,
+    faEquals,
+    faCircleInfo,
+} from "@fortawesome/free-solid-svg-icons";
+
+/* add icons to the library */
+library.add(faGithub, faLinkedin);
+library.add(
+    faArrowRightArrowLeft,
+    faChevronDown,
+    faPlus,
+    faLanguage,
+    faCircleNodes,
+    faSitemap,
+    faPercent,
+    faEquals,
+    faChevronRight,
+    faCircleInfo
+);

@@ -24,3 +24,7 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/legislation', function () {
+    return Inertia::render('Legislation/LegislationDocument');
+});
