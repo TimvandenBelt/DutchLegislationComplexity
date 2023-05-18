@@ -2,27 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "primevue/resources/themes/tailwind-light/theme.css";
+@import "primevue/resources/primevue.min.css";
+
 html,
 body {
     @apply subpixel-antialiased;
-    font-size: 16px;
-}
-
-.navbar-item {
-    @apply hidden py-2 px-2 align-middle font-semibold hover:bg-secondary hover:underline lg:block;
+    font-family: var(--font-family);
+    background-image: linear-gradient(
+        to left top,
+        #112892,
+        #005cbf,
+        #008bd9,
+        #00b7e5,
+        #12e2eb
+    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1 {
-    @apply inline-block py-2 font-serif text-4xl;
+    @apply inline-block py-2 text-3xl;
     font-weight: 500;
 }
 
 h2 {
-    @apply inline-block py-1 text-3xl;
+    @apply inline-block py-1 text-2xl;
     font-weight: 500;
 }
 
 h3 {
-    @apply inline-block py-1 text-2xl;
+    @apply inline-block py-1 text-xl;
     font-weight: 500;
 }

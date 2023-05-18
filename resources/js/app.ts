@@ -9,6 +9,7 @@ import { InertiaProgress } from "@inertiajs/progress";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { ZiggyVue } from "../../vendor/tightenco/ziggy/dist/vue.m";
 import DefaultLayout from "./Layouts/DefaultLayout.vue";
+import PrimeVue from "primevue/config";
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -40,6 +41,7 @@ createInertiaApp({
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-ignore // Is provided through the blade template or through a request
                 .use(ZiggyVue, Ziggy)
+                .use(PrimeVue, { ripple: true })
                 .component("font-awesome-icon", FontAwesomeIcon)
                 .mount(el)
         );
