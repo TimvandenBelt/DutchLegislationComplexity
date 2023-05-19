@@ -2,9 +2,8 @@ import "./bootstrap";
 import "../css/app.scss";
 import "flag-icons";
 
-import { createApp, h } from "vue";
-import { createInertiaApp } from "@inertiajs/inertia-vue3";
-import { InertiaProgress } from "@inertiajs/progress";
+import { createApp, h, computed } from "vue";
+import { createInertiaApp, usePage } from "@inertiajs/vue3";
 // tslint:disable-next-line:no-submodule-imports
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { ZiggyVue } from "../../vendor/tightenco/ziggy/dist/vue.m";
@@ -14,12 +13,14 @@ import PrimeVue from "primevue/config";
 /* import font awesome icon component */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-const appName =
-    window.document.getElementsByTagName("title")[0]?.innerText ||
-    "Dutch Language Complexity";
+const appName = computed(
+    () => usePage().props.appName || "Dutch Language Complexity"
+);
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => `${title} - ${appName.value}`,
+    includeCSS: true,
+    delay: 250,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     resolve: (name) => {
@@ -34,9 +35,9 @@ createInertiaApp({
     },
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    setup({ el, app, props, plugin }) {
+    setup({ el, App, props, plugin }) {
         return (
-            createApp({ render: () => h(app, props) })
+            createApp({ render: () => h(App, props) })
                 .use(plugin)
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-ignore // Is provided through the blade template or through a request
@@ -47,5 +48,3 @@ createInertiaApp({
         );
     },
 });
-
-InertiaProgress.init({ color: "#4B5563" });

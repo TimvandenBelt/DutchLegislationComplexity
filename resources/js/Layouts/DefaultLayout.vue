@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import LauoutNavigation from "../Components/Legislation/Layout/LayoutNavigation.vue";
 import LayoutFooter from "../Components/Legislation/Layout/LayoutFooter.vue";
-import { ref, h } from "vue";
+import { ref } from "vue";
 import Breadcrumb from "primevue/breadcrumb";
 
 const home = ref({
@@ -31,7 +31,7 @@ const items = ref([
             />
             <slot />
         </main>
-        <footer class="mt-6 mb-4 w-full text-sm text-gray-600">
+        <footer class="mb-4 mt-6 w-full text-sm text-gray-600">
             <LayoutFooter />
         </footer>
     </div>

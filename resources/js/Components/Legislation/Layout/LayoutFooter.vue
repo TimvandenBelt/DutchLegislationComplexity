@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { Link } from "@inertiajs/inertia-vue3";
+import { Link } from "@inertiajs/vue3";
 import Divider from "primevue/divider";
 </script>
 
 <template>
     <div
-        class="border-1 mx-12 rounded-lg border-gray-400 bg-gradient-to-b from-white/80 to-gray-100/80 py-2 px-4"
+        class="border-1 mx-12 rounded-lg border-gray-400 bg-gradient-to-b from-white/80 to-gray-100/80 px-4 py-2"
     >
         <div class="flex flex-row justify-around py-2">
             <ul class="col-span-2">

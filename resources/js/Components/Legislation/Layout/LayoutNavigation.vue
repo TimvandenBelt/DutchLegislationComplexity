@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { Link } from "@inertiajs/inertia-vue3";
+import { Link } from "@inertiajs/vue3";
 import { ref } from "vue";
 import SplitButton from "primevue/splitbutton";
 import Button from "primevue/button";
@@ -10,7 +10,7 @@ let hover_app_name = ref(false);
 
 <template>
     <nav
-        class="container mx-auto my-4 flex flex-row justify-between gap-4 py-2 px-4 text-white"
+        class="container mx-auto my-4 flex flex-row justify-between gap-4 px-4 py-2 text-white"
     >
         <ul class="flex flex-row items-center gap-4 align-middle">
             <li
